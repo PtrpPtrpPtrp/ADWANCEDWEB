@@ -1,9 +1,10 @@
-from flask import Flask
-server = Flask(__name__)
+from flask import Flask,request, jsonify
+from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
+app = Flask(__name__)
 
-@server.route("/")
-def hello():
-    return "Hello from server Hapy New Year Jaaaa"
-
-if __name__ == "__main__":
-    server.run(host='0.0.0.0', port=80)
+app = Flask (__name__) 
+app.config [  'SQLALCHEMY_DATABASE_URI'] = 'postgresql: // webadmin: PEMgvr72410
+app.config [' SQLALCHEMY_TRACK MODIFICATIONS '] = False  
+db =SQLAlchemy (app)   
+ma = Marshmallow (app)
